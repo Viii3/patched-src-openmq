@@ -81,14 +81,14 @@
         <grizzly.version>4.0.0</grizzly.version>
 
         <junit.version>5.8.2</junit.version>
-        <assertj.version>3.22.0</assertj.version>
-        <mockito.version>4.3.1</mockito.version>
-        <lombok.version>1.18.22</lombok.version>
-        <pmd.version>6.43.0</pmd.version>
-        <pmd.plugin.version>3.16.0</pmd.plugin.version>
-        <spotbugs.version>4.5.3</spotbugs.version>
-        <spotbugs.plugin.version>4.5.3.0</spotbugs.plugin.version>
-        <checkstyle.version>9.3</checkstyle.version>
+        <assertj.version>3.23.1</assertj.version>
+        <mockito.version>4.6.1</mockito.version>
+        <lombok.version>1.18.24</lombok.version>
+        <pmd.version>6.47.0</pmd.version>
+        <pmd.plugin.version>3.17.0</pmd.plugin.version>
+        <spotbugs.version>4.7.0</spotbugs.version>
+        <spotbugs.plugin.version>4.7.0.0</spotbugs.plugin.version>
+        <checkstyle.version>10.3</checkstyle.version>
         <maven.checkstyle.plugin.version>3.1.2</maven.checkstyle.plugin.version>
     </properties>
 
@@ -384,25 +384,25 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-antrun-plugin</artifactId>
-                    <version>3.0.0</version>
+                    <version>3.1.0</version>
                 </plugin>
 
                 <plugin>
                     <groupId>org.apache.felix</groupId>
                     <artifactId>maven-bundle-plugin</artifactId>
-                    <version>5.1.4</version>
+                    <version>5.1.6</version>
                 </plugin>
 
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.10.0</version>
+                    <version>3.10.1</version>
                 </plugin>
 
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-dependency-plugin</artifactId>
-                    <version>3.2.0</version>
+                    <version>3.3.0</version>
                 </plugin>
 
                 <plugin>
@@ -416,13 +416,13 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-clean-plugin</artifactId>
-                    <version>3.1.0</version>
+                    <version>3.2.0</version>
                 </plugin>
 
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
-                    <version>3.0.0-M5</version>
+                    <version>3.0.0-M7</version>
                     <configuration>
                         <trimStackTrace>false</trimStackTrace>
                     </configuration>
@@ -492,7 +492,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-site-plugin</artifactId>
-                    <version>3.11.0</version>
+                    <version>3.12.0</version>
                 </plugin>
 
                 <plugin>
@@ -510,7 +510,7 @@
                 <plugin>
                     <groupId>org.jacoco</groupId>
                     <artifactId>jacoco-maven-plugin</artifactId>
-                    <version>0.8.7</version>
+                    <version>0.8.8</version>
                 </plugin>
 
                 <plugin>
@@ -553,9 +553,9 @@
                 <artifactId>maven-bundle-plugin</artifactId>
                 <configuration>
                     <noWarningProjectTypes>pom</noWarningProjectTypes>
-                    <!-- By default, we don't export anything. -->
-                    <Export-Package></Export-Package>
                     <instructions>
+                        <!-- By default, we don't export anything. -->
+                        <Export-Package></Export-Package>
                         <!-- Read all the configuration from osgi.bundle file, if it exists. See Felix-699 to find out why 
                             we use ${basedir}. -->
                         <_include>-${basedir}/osgi.bundle</_include>
@@ -729,8 +729,8 @@
         <profile>
             <id>ecj</id>
             <properties>
-                <plexus.compiler.version>2.10.0</plexus.compiler.version>
-                <ecj.version>3.28.0</ecj.version>
+                <plexus.compiler.version>2.12.0</plexus.compiler.version>
+                <ecj.version>3.30.0</ecj.version>
                 <lombok.repo.location>${org.projectlombok:lombok:jar}</lombok.repo.location>
             </properties>
             <build>
