@@ -411,6 +411,7 @@
                     <artifactId>maven-javadoc-plugin</artifactId>
                     <configuration>
                         <notimestamp>true</notimestamp>
+                        <doclint>none</doclint>
                     </configuration>
                 </plugin>
 
