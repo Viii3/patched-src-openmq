@@ -916,7 +916,7 @@
             <id>add-test-dependencies</id>
             <activation>
                 <file>
-                    <exists>${basedir}/src/test</exists>
+                    <exists>${basedir}/src/test/needs.junit-jupiter-api</exists>
                 </file>
             </activation>
             <dependencies>
