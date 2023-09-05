@@ -22,9 +22,9 @@ jobs:
 
     steps:
     - name: Checkout for build
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
     - name: Set up JDK
-      uses: actions/setup-java@v2
+      uses: actions/setup-java@v3
       with:
         distribution: 'temurin'
         java-version: 11
@@ -39,7 +39,7 @@ jobs:
                --file mq \
                package
     - name: Upload MQ Distribution
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: mq-distribution
         path: mq/dist/bundles/mq.zip
@@ -48,11 +48,11 @@ jobs:
     name: Run Jakarta Messaging TCK against OpenMQ
     needs: build
     runs-on: ubuntu-latest
-    container: "ee4j/openmq-tck:3.1.0-20220222T100714Z-1"
+    container: "ee4j/openmq-tck:3.1.0-20220412T111203Z-1"
 
     steps:
     - name: Download MQ Distribution
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v3
       with:
         name: mq-distribution
     - name: Extract MQ Distribution
@@ -71,7 +71,7 @@ jobs:
         echo FAILED_COUNT=`head -2 /tmp/summary.txt | tail -1 | sed 's/.*=\\s\\(.*\\)/\\1/'`
         echo ERROR_COUNT=`head -3 /tmp/summary.txt | tail -1 | sed 's/.*=\\s\\(.*\\)/\\1/'`
     - name: Upload TCK Run Log
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: tck-summary
         path: |
