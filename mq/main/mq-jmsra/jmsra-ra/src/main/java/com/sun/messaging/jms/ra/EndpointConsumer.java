@@ -823,7 +823,7 @@ public class EndpointConsumer implements jakarta.jms.ExceptionListener, com.sun.
                 subscriptionName = activationName;
             } else {
                 // Instance scope
-                if (aSpec._isInClusteredContainerSet()) {
+                if (aSpec._isInClusteredContainerSet()) {//NOPMD
                     // it is in a glassfish cluster
 //                    String instanceName = this.ra.getBootstrapContext().getInstanceName();
 //                    subscriptionName = instanceName + "_" + activationName;
@@ -836,7 +836,7 @@ public class EndpointConsumer implements jakarta.jms.ExceptionListener, com.sun.
             // user specifies activationSpec property subscriptionName
             if (aSpec.getSubscriptionScope().equals("Instance")) {
                 // Instance scope
-                if (aSpec._isInClusteredContainerSet()) {
+                if (aSpec._isInClusteredContainerSet()) {//NOPMD
                     // it is in a glassfish cluster
 //                    String instanceName = this.ra.getBootstrapContext().getInstanceName();
 //                    subscriptionName = instanceName + "_" + aSpec.getSubscriptionName();
