@@ -91,6 +91,7 @@
         <spotbugs.plugin.version>4.8.4.0</spotbugs.plugin.version>
         <checkstyle.version>10.15.0</checkstyle.version>
         <maven.checkstyle.plugin.version>3.3.1</maven.checkstyle.plugin.version>
+        <error-prone.version>2.27.0</error-prone.version>
     </properties>
 
     <dependencyManagement>
@@ -372,6 +373,12 @@
                 <groupId>com.sun.messaging.mq</groupId>
                 <artifactId>fscontext</artifactId>
                 <version>4.6-b01</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.errorprone</groupId>
+                <artifactId>error_prone_core</artifactId>
+                <version>${error-prone.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
