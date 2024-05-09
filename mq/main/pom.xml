@@ -687,9 +687,6 @@
         </profile>
         <profile>
             <id>cpd</id>
-            <properties>
-                <minimumTokens>503</minimumTokens>
-            </properties>
             <build>
                 <plugins>
                     <plugin>
