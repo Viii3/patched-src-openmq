@@ -27,17 +27,17 @@ public class VersionTest {
 
         var str = version.toString();
 
-        assertThat(str).matches("""
-                                ================================================================================
-                                Eclipse OpenMQ\\(tm\\) .+\\..+\\..+
-                                Eclipse Foundation
-                                Version:  .+\\..+\\..  \\(Build .+-.+\\)
-                                Compile:  .*
-                                
-                                Copyright \\(c\\) 2013, 2018 Oracle and/or its affiliates. All rights reserved.
-                                Copyright \\(c\\) 2018, .{4} Contributors to Eclipse Foundation.
-                                ================================================================================
-                                """);
+        String template = "================================================================================";
+        template += "\nEclipse OpenMQ\\(tm\\) .+\\..+\\..+";
+        template += "\nEclipse Foundation";
+        template += "\nVersion:  .+\\..+\\..  \\(Build .+-.+\\)";
+        template += "\nCompile:  .*";
+        template += "\n";
+        template += "\nCopyright \\(c\\) 2013, 2018 Oracle and/or its affiliates. All rights reserved.";
+        template += "\nCopyright \\(c\\) 2018, .{4} Contributors to Eclipse Foundation.";
+        template += "\n================================================================================\n";
+
+        assertThat(str).matches(template);
     }
 }
 
