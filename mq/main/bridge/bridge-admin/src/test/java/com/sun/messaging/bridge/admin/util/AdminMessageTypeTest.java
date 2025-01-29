@@ -34,7 +34,7 @@ class AdminMessageTypeTest {
 
   @Test
   void testStringForTooBigIndex() {
-    assertThat(AdminMessageType.getString(AdminMessageType.Type.LAST)).isEqualTo("INVALID_TYPE(%d)".formatted(AdminMessageType.Type.LAST));
+    assertThat(AdminMessageType.getString(AdminMessageType.Type.LAST)).isEqualTo(String.format("INVALID_TYPE(%d)", AdminMessageType.Type.LAST));
   }
 
   @ParameterizedTest
